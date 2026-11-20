@@ -1,0 +1,31 @@
+{
+  "name": "manas-college-resume-maker",
+  "version": "1.0.0",
+  "description": "Manas College of Science Technology & Management - Resume Maker",
+  "author": "Manas College",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "edu.manas.resumemaker",
+    "productName": "Manas College Resume Maker",
+    "files": ["main.js", "index.html", "icon.png", "icon.ico"],
+    "directories": { "output": "dist" },
+    "win": {
+      "icon": "icon.ico",
+      "target": ["nsis", "portable"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Manas College Resume Maker"
+    }
+  }
+}
